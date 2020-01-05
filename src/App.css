@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+/* Own styles */
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.routerLink {
+  flex: 1;
+  background-color: aquamarine;
+  padding: 30px;
+  border: #282c34;
+  /* margin: 30px; */
+}
+.routerLink:hover {
+  background-color: aqua;
+}
