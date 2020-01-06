@@ -1,5 +1,13 @@
-const cityWeather = (state = [], action: any) => {
+const rootReducer = (state = [], action: any) => {
   switch (action.type) {
+    case "REQUEST_WEATHER":
+      return { ...state, isFetching: true };
+    case "RECEIVE_WEATHER":
+      return {
+        ...state,
+        isFetching: false,
+        temperature: action.weather.current.temperature
+      };
     case "GET_CITY_WEATHER":
       //
       return action.data;
@@ -8,4 +16,4 @@ const cityWeather = (state = [], action: any) => {
   }
 };
 
-export default cityWeather;
+export default rootReducer;

@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
 
 import "./index.css";
-import App from "./App";
-import cityWeather from "./reducers";
+import App from "./containers/App/App";
 import StoreState from "./types";
 import * as serviceWorker from "./serviceWorker";
+import configureStore from "./store";
+import rootSaga from "./sagas";
 
-const store = createStore(cityWeather);
+const store = configureStore();
+store.runSaga(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <App />,

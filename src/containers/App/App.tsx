@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
-import City from "./containers/City";
+import City from "../City";
 
 const App: React.FC = () => {
   return (

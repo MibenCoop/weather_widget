@@ -8,11 +8,11 @@ import * as action from "../../actions";
 import StoreState from "../../types";
 
 const mapStateToProps = ({ cityName, temperature }: StoreState) => ({
-  cityName,
+  city: cityName,
   temperature
 });
-const mapDispatchToProps = {
-  getCityWeather: () => action.getCityWeather()
-};
+// const mapDispatchToProps = {
+//   fetchWeather: () => action.fetchWeather()
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(City);
+export default connect(mapStateToProps)(City);
