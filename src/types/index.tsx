@@ -1,4 +1,5 @@
 export default interface StoreState {
-  cityName: string;
+  city: string;
   temperature: number;
+  isFetching: boolean;
 }

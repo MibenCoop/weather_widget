@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 
 import "./index.css";
 import App from "./containers/App/App";
-import StoreState from "./types";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store";
 import rootSaga from "./sagas";

@@ -8,9 +8,15 @@ const rootReducer = (state = [], action: any) => {
         isFetching: false,
         temperature: action.weather.current.temperature
       };
-    case "GET_CITY_WEATHER":
-      //
-      return action.data;
+    case "REQUEST_CITIES":
+      return { ...state, isFetching: true };
+    case "RECEIVE_CITIES":
+      console.log("RECEIVE_CITIES", action);
+      return {
+        ...state,
+        isFetching: false,
+        cities: action.cities
+      };
     default:
       return state;
   }

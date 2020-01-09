@@ -1,11 +1,8 @@
-import { call, put, takeEvery, fork } from "redux-saga/effects";
+import { call, delay, put, takeEvery, fork } from "redux-saga/effects";
 import axios from "axios";
 
 import * as actions from "../actions";
-
-export function* helloSaga() {
-  console.log("hello world");
-}
+import cityList from "../mocks/cityList.json";
 
 export function fetchWeatherApi(city: string) {
   return axios
@@ -16,14 +13,29 @@ export function fetchWeatherApi(city: string) {
 }
 export function* fetchWeather(action: any) {
   yield put(actions.requestWeather(action.city));
-  const weather = yield call(fetchWeatherApi, action.city);
+  yield delay(1000);
+  // const weather = yield call(fetchWeatherApi, action.city);
+  // console.log("weather", weather);
+  let weather = {
+    current: { temperature: Math.floor(Math.random() * Math.floor(10)) }
+  };
   yield put(actions.receiveWeather(action.city, weather));
+}
+export function* fetchCities(action: any) {
+  yield put(actions.requestCityList());
+  yield delay(1000);
+  yield put(actions.receiveCityList(cityList));
 }
 
 export function* watchFetchWeather() {
   yield takeEvery("FETCH_WEATHER", fetchWeather);
 }
+
+export function* watchFetchCities() {
+  yield takeEvery("FETCH_CITIES", fetchCities);
+}
+
 export default function* rootSaga() {
-  yield fork(helloSaga);
   yield fork(watchFetchWeather);
+  yield fork(watchFetchCities);
 }

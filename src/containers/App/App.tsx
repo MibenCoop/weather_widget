@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import City from "../City";
+import CityList from "../CityList";
 
 const App: React.FC = () => {
   return (
@@ -31,31 +32,14 @@ const App: React.FC = () => {
           <Route path="/rostov-na-dony">
             <City name="Rostov-na-dony" />
           </Route>
+          <Route exact path="/">
+            All
+            <CityList />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
   );
 };
-
-// function City({ currentCity }: any) {
-//   console.log("name", currentCity);
-//   return <p>{currentCity}</p>;
-// }
-
-// class City extends React.Component<CityProps, {}> {
-//   // constructor(props: City) {
-//   //   super(props);
-//   // }
-//   constructor(props: CityProps) {
-//     super(props);
-//   }
-//   render() {
-//     return <p>{this.props.name}</p>;
-//   }
-// }
-
-// interface CityProps {
-//   name: string;
-// }
 
 export default App;

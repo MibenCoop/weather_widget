@@ -1,13 +1,3 @@
-export function getCityWeather() {
-  return {
-    type: "GET_CITY_WEATHER",
-    data: {
-      cityName: "Saint-Peterburg",
-      temperature: 1
-    }
-  };
-}
-
 export function requestWeather(city: any) {
   return {
     type: "REQUEST_WEATHER",
@@ -27,5 +17,24 @@ export function fetchWeather(city: any) {
   return {
     type: "FETCH_WEATHER",
     city
+  };
+}
+
+export function requestCityList() {
+  return {
+    type: "REQUEST_CITIES"
+  };
+}
+
+export function receiveCityList(cities: Array<object>) {
+  return {
+    type: "RECEIVE_CITIES",
+    cities
+  };
+}
+
+export function fetchCities() {
+  return {
+    type: "FETCH_CITIES"
   };
 }
