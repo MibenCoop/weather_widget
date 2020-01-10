@@ -1,7 +1,5 @@
 import React from "react";
 
-const Spinner = () => {
-  return <div>Waiting...</div>;
-};
+const Spinner = () => <div>Waiting...</div>;
 
 export default Spinner;

@@ -1,13 +1,15 @@
+import * as constants from "../constants";
+
 export function requestWeather(city: any) {
   return {
-    type: "REQUEST_WEATHER",
+    type: constants.REQUEST_WEATHER,
     city
   };
 }
 
-export function receiveWeather(city: any, weather: any) {
+export function receiveWeather(city: any, weather: object) {
   return {
-    type: "RECEIVE_WEATHER",
+    type: constants.RECEIVE_WEATHER,
     city,
     weather
   };
@@ -15,26 +17,39 @@ export function receiveWeather(city: any, weather: any) {
 
 export function fetchWeather(city: any) {
   return {
-    type: "FETCH_WEATHER",
+    type: constants.FETCH_WEATHER,
     city
   };
 }
 
 export function requestCityList() {
   return {
-    type: "REQUEST_CITIES"
+    type: constants.REQUEST_CITIES
   };
 }
 
 export function receiveCityList(cities: Array<object>) {
+  console.log("receiveCityList", cities);
   return {
-    type: "RECEIVE_CITIES",
+    type: constants.RECEIVE_CITIES,
     cities
   };
 }
 
 export function fetchCities() {
   return {
-    type: "FETCH_CITIES"
+    type: constants.FETCH_CITIES
+  };
+}
+
+export function deleteLastCity() {
+  return {
+    type: constants.DELETE_LAST_CITY
+  };
+}
+
+export function increment() {
+  return {
+    type: constants.INCREMENT
   };
 }
