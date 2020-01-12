@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
 
-// import City from "../../components/City";
+import CityComponent from "../../components/City";
 
-import StoreState from "../../types";
+import { CityWeather } from "../../interfaces";
 import Spinner from "../../components/Spinner";
 import * as actions from "../../actions";
 
@@ -23,19 +23,19 @@ class City extends Component<cityProps> {
   render() {
     const { name, isFetching, temperature }: any = this.props;
     if (isFetching) return <Spinner />;
-    return (
-      <p>
-        Sity: {name} Temperature: {temperature}{" "}
-      </p>
-    );
+    return <CityComponent name={name} temperature={temperature} />;
   }
 }
 
-const mapStateToProps = ({ temperature, isFetching }: StoreState) => ({
-  temperature,
-  isFetching
+type CityWeatherState = {
+  rootReducer: CityWeather;
+};
+
+const mapStateToProps = ({ rootReducer }: CityWeatherState) => ({
+  temperature: rootReducer.temperature,
+  isFetching: rootReducer.isFetching
 });
 
-export default connect(mapStateToProps, { fetchWeather: actions.fetchWeather })(
-  City
-);
+export default connect(mapStateToProps, {
+  fetchWeather: (name: string) => actions.fetchWeather(name)
+})(City);

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter component should match snapshot with initial counter value 1`] = `
+<p>
+  0
+</p>
+`;
+
+exports[`Counter component should match snapshot with not null counter value 1`] = `
+<p>
+  10
+</p>
+`;

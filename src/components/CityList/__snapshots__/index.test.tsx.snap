@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`City item component should be render a cities 1`] = `
+Array [
+  <CityItem
+    city={
+      Object {
+        "admin": "Moskva",
+        "capital": "primary",
+        "city": "Moscow",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "55.752222",
+        "lng": "37.615556",
+        "population": "10452000",
+        "population_proper": "10452000",
+      }
+    }
+    key="55.75222237.615556"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Sankt-Peterburg",
+        "capital": "admin",
+        "city": "Saint Petersburg",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "59.894444",
+        "lng": "30.264167",
+        "population": "4553000",
+        "population_proper": "3493212",
+      }
+    }
+    key="59.89444430.264167"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Novosibirskaya Oblast’",
+        "capital": "admin",
+        "city": "Novosibirsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "55.0415",
+        "lng": "82.9346",
+        "population": "1389000",
+        "population_proper": "1037201",
+      }
+    }
+    key="55.041582.9346"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Sverdlovskaya Oblast’",
+        "capital": "admin",
+        "city": "Yekaterinburg",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "56.8519",
+        "lng": "60.6122",
+        "population": "1313000",
+        "population_proper": "1227976",
+      }
+    }
+    key="56.851960.6122"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Nizhegorodskaya Oblast’",
+        "capital": "admin",
+        "city": "Nizhniy Novgorod",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "56.326944",
+        "lng": "44.0075",
+        "population": "1278000",
+        "population_proper": "1214926",
+      }
+    }
+    key="56.32694444.0075"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Samarskaya Oblast’",
+        "capital": "admin",
+        "city": "Samara",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "53.200065",
+        "lng": "50.150002",
+        "population": "1137000",
+        "population_proper": "856190",
+      }
+    }
+    key="53.20006550.150002"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Omskaya Oblast’",
+        "capital": "admin",
+        "city": "Omsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "55.0",
+        "lng": "73.4",
+        "population": "1135000",
+        "population_proper": "1043403",
+      }
+    }
+    key="55.073.4"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Tatarstan",
+        "capital": "admin",
+        "city": "Kazan’",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "55.78874",
+        "lng": "49.122144",
+        "population": "1115000",
+        "population_proper": "912270",
+      }
+    }
+    key="55.7887449.122144"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Chelyabinskaya Oblast’",
+        "capital": "admin",
+        "city": "Chelyabinsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "55.154015",
+        "lng": "61.42915",
+        "population": "1091000",
+        "population_proper": "946604",
+      }
+    }
+    key="55.15401561.42915"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Rostovskaya Oblast’",
+        "capital": "admin",
+        "city": "Rostov-na-Donu",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "47.23135",
+        "lng": "39.723284",
+        "population": "1052000",
+        "population_proper": "1013134",
+      }
+    }
+    key="47.2313539.723284"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Bashkortostan",
+        "capital": "admin",
+        "city": "Ufa",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "54.785167",
+        "lng": "56.045621",
+        "population": "1018000",
+        "population_proper": "920756",
+      }
+    }
+    key="54.78516756.045621"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Permskiy Kray",
+        "capital": "",
+        "city": "Perm’",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "58.009282",
+        "lng": "56.284063",
+        "population": "997000",
+        "population_proper": "851308",
+      }
+    }
+    key="58.00928256.284063"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Volgogradskaya Oblast’",
+        "capital": "admin",
+        "city": "Volgograd",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "48.71939",
+        "lng": "44.501835",
+        "population": "984000",
+        "population_proper": "619655",
+      }
+    }
+    key="48.7193944.501835"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Krasnoyarskiy Kray",
+        "capital": "admin",
+        "city": "Krasnoyarsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "56.018393",
+        "lng": "92.867174",
+        "population": "925000",
+        "population_proper": "302210",
+      }
+    }
+    key="56.01839392.867174"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Voronezhskaya Oblast’",
+        "capital": "admin",
+        "city": "Voronezh",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "51.672035",
+        "lng": "39.184301",
+        "population": "844000",
+        "population_proper": "295469",
+      }
+    }
+    key="51.67203539.184301"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Saratovskaya Oblast’",
+        "capital": "admin",
+        "city": "Saratov",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "51.540556",
+        "lng": "46.008611",
+        "population": "843000",
+        "population_proper": "786173",
+      }
+    }
+    key="51.54055646.008611"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Krasnodarskiy Kray",
+        "capital": "admin",
+        "city": "Krasnodar",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "45.044843",
+        "lng": "38.976029",
+        "population": "649851",
+        "population_proper": "552532",
+      }
+    }
+    key="45.04484338.976029"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Ul’yanovskaya Oblast’",
+        "capital": "admin",
+        "city": "Ul’yanovsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "54.328241",
+        "lng": "48.38657",
+        "population": "640680",
+        "population_proper": "502427",
+      }
+    }
+    key="54.32824148.38657"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Udmurtiya",
+        "capital": "admin",
+        "city": "Izhevsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "56.849756",
+        "lng": "53.204479",
+        "population": "631038",
+        "population_proper": "591422",
+      }
+    }
+    key="56.84975653.204479"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Yaroslavskaya Oblast’",
+        "capital": "admin",
+        "city": "Yaroslavl’",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "57.61977",
+        "lng": "39.85536",
+        "population": "606730",
+        "population_proper": "535578",
+      }
+    }
+    key="57.6197739.85536"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Altayskiy Kray",
+        "capital": "admin",
+        "city": "Barnaul",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "53.360556",
+        "lng": "83.763611",
+        "population": "599579",
+        "population_proper": "539843",
+      }
+    }
+    key="53.36055683.763611"
+  />,
+  <CityItem
+    city={
+      Object {
+        "admin": "Kemerovskaya Oblast’",
+        "capital": "",
+        "city": "Novokuznetsk",
+        "country": "Russia",
+        "iso2": "RU",
+        "lat": "53.7557",
+        "lng": "87.1099",
+        "population": "539616",
+        "population_proper": "521035",
+      }
+    }
+    key="53.755787.1099"
+  />,
+]
+`;
+
+exports[`City item component should be render an empty list 1`] = `null`;

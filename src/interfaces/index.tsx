@@ -24,3 +24,8 @@ export interface CityListState extends CitiesStoreState, CounterStoreState {
   rootReducer: CitiesStoreState;
   counterReducer: CounterStoreState;
 }
+
+export interface CityWeather {
+  temperature: number;
+  isFetching: boolean;
+}

@@ -1,23 +1,13 @@
-import React, { Component } from "react";
-import * as actions from "../../actions";
+import React from "react";
 
-import Spinner from "../Spinner";
-class City extends Component {
-  componentDidMount() {
-    const { name, dispatch }: any = this.props;
-    dispatch(actions.fetchWeather(name));
-  }
-  render() {
-    const { name, isFetching, temperature }: any = this.props;
-    if (isFetching) {
-      return <Spinner />;
-    } else {
-      return (
-        <p>
-          City: {name} Temperature: {temperature}{" "}
-        </p>
-      );
-    }
-  }
-}
+export type Props = {
+  name: string;
+  temperature: number;
+};
+
+const City = ({ name, temperature }: Props) => (
+  <p>
+    City name: {name}, Temperature: {temperature + 1}
+  </p>
+);
 export default City;
