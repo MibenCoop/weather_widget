@@ -9,7 +9,6 @@ const tenBiggestCitiesSelector = (state: any) => {
 const citiesSelector = createSelector(
   tenBiggestCitiesSelector,
   (cities: Array<object>) => {
-    console.log("citiesSelector invoked", cities);
     return cities;
   }
 );

@@ -9,7 +9,13 @@ import CityList from "../../components/CityList";
 import Counter from "../../components/Counter";
 
 import { City, CityListState } from "../../interfaces";
-export class CityListContainer extends Component {
+
+type Props = {
+  cities: Array<object>;
+  biggestCities: Array<object>;
+  counter: number;
+};
+export class CityListContainer extends Component<{}, Props> {
   componentDidMount() {
     const { fetchCities }: any = this.props;
     fetchCities();
@@ -20,25 +26,21 @@ export class CityListContainer extends Component {
       isFetching,
       increment,
       biggestCities,
-      deleteLastCity,
       counter
     }: any = this.props;
-    if (isFetching || !cities) {
-      return <Spinner />;
-    } else {
-      return (
-        <>
-          <br></br>
-          <button onClick={() => increment()}>Increment</button>
-          <button onClick={() => deleteLastCity()}>deleteLastCity</button>
-          <Counter counter={counter} />
-          <p>Top ten biggest City in Russia</p>
-          <CityList cities={biggestCities} />
-          <p>All</p>
-          <CityList cities={cities} />
-        </>
-      );
-    }
+    if (isFetching || !cities) return <Spinner />;
+    return (
+      <>
+        <button className="counter-button" onClick={() => increment()}>
+          Increment
+        </button>
+        <Counter counter={counter} />
+        <p>Top ten biggest City in Russia</p>
+        <CityList cities={biggestCities} />
+        <p>All</p>
+        <CityList cities={cities} />
+      </>
+    );
   }
 }
 
@@ -53,6 +55,5 @@ const mapStateToProps = ({ rootReducer, counterReducer }: CityListState) => {
 
 export default connect(mapStateToProps, {
   fetchCities: actions.fetchCities,
-  deleteLastCity: actions.deleteLastCity,
   increment: actions.increment
 })(CityListContainer);

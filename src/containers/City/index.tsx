@@ -11,7 +11,7 @@ type cityProps = {
   name: String;
 };
 
-class City extends Component<cityProps> {
+export class CityWeatherList extends Component<cityProps> {
   componentDidMount() {
     const { name, fetchWeather }: any = this.props;
     fetchWeather(name);
@@ -38,4 +38,4 @@ const mapStateToProps = ({ rootReducer }: CityWeatherState) => ({
 
 export default connect(mapStateToProps, {
   fetchWeather: (name: string) => actions.fetchWeather(name)
-})(City);
+})(CityWeatherList);

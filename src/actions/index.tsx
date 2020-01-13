@@ -42,12 +42,6 @@ export function fetchCities() {
   };
 }
 
-export function deleteLastCity() {
-  return {
-    type: constants.DELETE_LAST_CITY
-  };
-}
-
 export function increment() {
   return {
     type: constants.INCREMENT

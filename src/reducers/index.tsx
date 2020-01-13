@@ -21,11 +21,6 @@ export const rootReducer = (state = [], action: any) => {
         isFetching: false,
         cities: action.cities
       };
-    case "DELETE_LAST_CITY":
-      return {
-        ...state,
-        cities: cityList.slice(0, -1)
-      };
     default:
       return state;
   }
