@@ -29,7 +29,6 @@ export function requestCityList() {
 }
 
 export function receiveCityList(cities: Array<object>) {
-  console.log("receiveCityList", cities);
   return {
     type: constants.RECEIVE_CITIES,
     cities

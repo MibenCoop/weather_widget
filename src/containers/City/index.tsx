@@ -28,14 +28,17 @@ export class CityWeatherList extends Component<cityProps> {
 }
 
 type CityWeatherState = {
-  rootReducer: CityWeather;
+  citiesWeather: CityWeather;
 };
 
-const mapStateToProps = ({ rootReducer }: CityWeatherState) => ({
-  temperature: rootReducer.temperature,
-  isFetching: rootReducer.isFetching
+const mapStateToProps = ({ citiesWeather }: CityWeatherState) => ({
+  temperature: citiesWeather.temperature,
+  isFetching: citiesWeather.isFetching
 });
 
-export default connect(mapStateToProps, {
-  fetchWeather: (name: string) => actions.fetchWeather(name)
-})(CityWeatherList);
+export default connect(
+  mapStateToProps,
+  {
+    fetchWeather: (name: string) => actions.fetchWeather(name)
+  }
+)(CityWeatherList);

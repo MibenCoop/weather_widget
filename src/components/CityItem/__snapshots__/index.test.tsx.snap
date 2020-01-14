@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`City Item Renders a City Item  1`] = `
-<li
-  style={
-    Object {
-      "textAlign": "left",
-    }
-  }
->
-  Moscow
-</li>
-`;
-
 exports[`City item component Renders a City Item  1`] = `
 <li
   style={

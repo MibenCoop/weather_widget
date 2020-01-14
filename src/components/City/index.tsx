@@ -7,7 +7,7 @@ export type Props = {
 
 const City = ({ name, temperature }: Props) => (
   <p>
-    City name: {name}, Temperature: {temperature + 1}
+    City name: {name}, Temperature: {temperature}
   </p>
 );
 export default City;

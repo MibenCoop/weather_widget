@@ -44,16 +44,19 @@ export class CityListContainer extends Component<{}, Props> {
   }
 }
 
-const mapStateToProps = ({ rootReducer, counterReducer }: CityListState) => {
+const mapStateToProps = ({ cities, counter }: CityListState) => {
   return {
-    cities: rootReducer.cities,
-    isFetching: rootReducer.isFetching,
-    biggestCities: CitiesSelector(rootReducer.cities),
-    counter: counterReducer
+    cities: cities.cities,
+    isFetching: cities.isFetching,
+    biggestCities: CitiesSelector(cities.cities),
+    counter: counter
   };
 };
 
-export default connect(mapStateToProps, {
-  fetchCities: actions.fetchCities,
-  increment: actions.increment
-})(CityListContainer);
+export default connect(
+  mapStateToProps,
+  {
+    fetchCities: actions.fetchCities,
+    increment: actions.increment
+  }
+)(CityListContainer);
