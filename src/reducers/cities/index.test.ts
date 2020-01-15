@@ -1,4 +1,4 @@
-import { REQUEST_CITIES, RECEIVE_CITIES } from "../../constants";
+import { REQUEST_CITIES, RECEIVE_CITIES } from "../../actions/types";
 import cities from "./index";
 import cityList from "../../mocks/cityList.json";
 
@@ -10,7 +10,6 @@ describe("Cities reducer", () => {
     const newState = cities(undefined, {
       type: REQUEST_CITIES
     });
-    console.log("newState", newState);
     expect(newState).toEqual({ isFetching: true });
   });
   it("should return new state with property isFetching equals true", () => {

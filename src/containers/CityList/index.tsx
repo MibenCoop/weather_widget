@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import * as actions from "../../actions";
+import { fetchCities } from "../../actions/cities";
+import { increment } from "../../actions/counter";
 import CitiesSelector from "../../selectors/cityCelector";
 
 import Spinner from "../../components/Spinner";
@@ -53,10 +54,7 @@ const mapStateToProps = ({ cities, counter }: CityListState) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchCities: actions.fetchCities,
-    increment: actions.increment
-  }
-)(CityListContainer);
+export default connect(mapStateToProps, {
+  fetchCities: fetchCities,
+  increment: increment
+})(CityListContainer);

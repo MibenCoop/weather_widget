@@ -1,21 +1,22 @@
 import { call, delay, put, takeEvery, fork } from "redux-saga/effects";
 
-import { fetchWeather, fetchCities, getDummyWeather } from "./index";
+import { fetchWeather, fetchCities } from "./index";
 import cityList from "../mocks/cityList.json";
-import configureStore from "../store";
-import * as actions from "../actions";
+import { requestCityList, receiveCityList } from "../actions/cities";
+import { requestWeather, receiveWeather } from "../actions/cityWeather";
+import { api } from "./../services/index";
 
 describe("Sagas", () => {
   describe("fetchCities Saga", () => {
     const gen = fetchCities();
     it("should dispatch requestCityList action", () => {
-      expect(gen.next().value).toEqual(put(actions.requestCityList()));
+      expect(gen.next().value).toEqual(put(requestCityList()));
     });
     it("should wait 1000 ms", () => {
       expect(gen.next().value).toEqual(delay(1000));
     });
     it("must dispatch a receiveCities action with city list", () => {
-      expect(gen.next().value).toEqual(put(actions.receiveCityList(cityList)));
+      expect(gen.next().value).toEqual(put(receiveCityList(cityList)));
     });
   });
   // describe("fetchWeatherApi", () => {
@@ -47,21 +48,17 @@ describe("Sagas", () => {
     const actionMock = {
       city: "Moscow"
     };
-    const weather = {
-      current: { temperature: getDummyWeather() }
-    };
+    const weather = api.getDummyWeather();
     const gen = fetchWeather(actionMock);
     it("should dispatch requestWeather action", () => {
-      expect(gen.next().value).toEqual(
-        put(actions.requestWeather(actionMock.city))
-      );
+      expect(gen.next().value).toEqual(put(requestWeather(actionMock.city)));
     });
     it("should wait 1000 ms", () => {
       expect(gen.next().value).toEqual(delay(1000));
     });
     it("should dispatch a receiveWeather action with weather list", () => {
       expect(gen.next().value).toEqual(
-        put(actions.receiveWeather(actionMock.city, weather))
+        put(receiveWeather(actionMock.city, weather))
       );
     });
 

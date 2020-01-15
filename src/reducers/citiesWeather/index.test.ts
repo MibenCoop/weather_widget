@@ -1,6 +1,6 @@
 import CityWeather from "./index";
-import { REQUEST_WEATHER, RECEIVE_WEATHER } from "../../constants";
-import { getDummyWeather } from "./../../sagas/index";
+import { REQUEST_WEATHER, RECEIVE_WEATHER } from "../../actions/types";
+import { api } from "./../../services/index";
 
 describe("City weather Reducer", () => {
   it("should return default value", () => {
@@ -14,7 +14,7 @@ describe("City weather Reducer", () => {
     expect(newState).toEqual({ isFetching: true });
   });
   it("should return new state with city weather", () => {
-    const weather = { current: { temperature: getDummyWeather } };
+    const weather = api.getDummyWeather();
     const newState = CityWeather(undefined, {
       type: RECEIVE_WEATHER,
       weather

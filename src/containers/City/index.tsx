@@ -5,7 +5,7 @@ import CityComponent from "../../components/City";
 
 import { CityWeather } from "../../interfaces";
 import Spinner from "../../components/Spinner";
-import * as actions from "../../actions";
+import { fetchWeather } from "../../actions/cityWeather";
 
 type cityProps = {
   name: String;
@@ -36,9 +36,6 @@ const mapStateToProps = ({ citiesWeather }: CityWeatherState) => ({
   isFetching: citiesWeather.isFetching
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchWeather: (name: string) => actions.fetchWeather(name)
-  }
-)(CityWeatherList);
+export default connect(mapStateToProps, {
+  fetchWeather: (name: string) => fetchWeather(name)
+})(CityWeatherList);

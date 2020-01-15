@@ -1,8 +1,10 @@
+import { RECEIVE_CITIES, REQUEST_CITIES } from "../../actions/types";
+
 export default (state = [], action: any) => {
   switch (action.type) {
-    case "REQUEST_CITIES":
+    case REQUEST_CITIES:
       return { ...state, isFetching: true };
-    case "RECEIVE_CITIES":
+    case RECEIVE_CITIES:
       return {
         ...state,
         isFetching: false,

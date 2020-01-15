@@ -1,5 +1,5 @@
 import counter from "./index";
-import { INCREMENT } from "./../../constants/index";
+import { INCREMENT } from "../../actions/types";
 
 describe("Counter reducer", () => {
   it("should return default value", () => {
