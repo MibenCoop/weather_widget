@@ -7,6 +7,7 @@ import CitiesSelector from "../../selectors/cityCelector";
 
 import Spinner from "../../components/Spinner";
 import CityList from "../../components/CityList";
+import { SignupForm } from "../SignupForm";
 import Counter from "../../components/Counter";
 
 import { City, CityListState } from "../../interfaces";
@@ -32,10 +33,10 @@ export class CityListContainer extends Component<{}, Props> {
     if (isFetching || !cities) return <Spinner />;
     return (
       <>
-        <button className="counter-button" onClick={() => increment()}>
+        {/* <button className="counter-button" onClick={() => increment()}>
           Increment
-        </button>
-        <Counter counter={counter} />
+        </button> */}
+        <SignupForm />
         <p>Top ten biggest City in Russia</p>
         <CityList cities={biggestCities} />
         <p>All</p>

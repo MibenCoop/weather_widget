@@ -12,6 +12,9 @@ const App: React.FC = () => {
         <nav>
           <ul className="menu">
             <li className="routerLink">
+              <Link to="/">Cities</Link>
+            </li>
+            <li className="routerLink">
               <Link to="/moscow">Moscow</Link>
             </li>
             <li className="routerLink">
@@ -33,7 +36,6 @@ const App: React.FC = () => {
             <City name="Rostov-na-dony" />
           </Route>
           <Route exact path="/">
-            All
             <CityList />
           </Route>
         </Switch>
