@@ -3,24 +3,66 @@ import { connect } from "react-redux";
 
 import { fetchCities } from "../../actions/cities";
 import { increment } from "../../actions/counter";
-import CitiesSelector from "../../selectors/cityCelector";
+import CitiesSelector from "../../selectors/citySelector";
 
 import Spinner from "../../components/Spinner";
 import CityList from "../../components/CityList";
 import { SignupForm } from "../SignupForm";
 import Counter from "../../components/Counter";
 
-import { City, CityListState } from "../../interfaces";
+import { City, CityListState, SelectedCities } from "../../interfaces";
+import cities from "../../reducers/cities";
 
-type Props = {
+interface IProps {
   cities: Array<object>;
   biggestCities: Array<object>;
   counter: number;
-};
-export class CityListContainer extends Component<{}, Props> {
+}
+
+interface IState {
+  playOrPause?: string;
+  selectedCities?: SelectedCities;
+  hasSelectedCities: boolean;
+}
+export class CityListContainer extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = { hasSelectedCities: false };
+  }
   componentDidMount() {
     const { fetchCities }: any = this.props;
     fetchCities();
+  }
+
+  getCitiesByCelector = (
+    name: any,
+    minTemperature: any,
+    maxTemperature: any
+  ) => {
+    const { cities }: any = this.props;
+    console.log(minTemperature);
+    if (name.length > 0) {
+      return cities.filter((city: any) => city.name === name);
+    } else if (minTemperature > 0) {
+      return cities.filter((city: any) => city.temperature >= minTemperature);
+    } else if (maxTemperature > 0) {
+      return cities.filter((city: any) => city.temperature <= maxTemperature);
+    } else {
+      return cities.filter(
+        (city: any) =>
+          city.temperature <= maxTemperature &&
+          city.temperature >= minTemperature
+      );
+    }
+  };
+  selectCities({ city, minTemperature, maxTemperature }: SelectedCities) {
+    // console.log("selectCities", city, minTemperature, maxTemperature);
+    const selectedCities = this.getCitiesByCelector(
+      city,
+      minTemperature,
+      maxTemperature
+    );
+    this.setState({ selectedCities, hasSelectedCities: true });
   }
   render() {
     const {
@@ -36,7 +78,15 @@ export class CityListContainer extends Component<{}, Props> {
         {/* <button className="counter-button" onClick={() => increment()}>
           Increment
         </button> */}
-        <SignupForm />
+        <SignupForm
+          selectCities={(values: SelectedCities) => this.selectCities(values)}
+        />
+        {this.state.hasSelectedCities ? (
+          <>
+            <p>Selected cities</p>
+            <CityList cities={this.state.selectedCities} />
+          </>
+        ) : null}
         <p>Top ten biggest City in Russia</p>
         <CityList cities={biggestCities} />
         <p>All</p>

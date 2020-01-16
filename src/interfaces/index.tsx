@@ -1,5 +1,5 @@
 export interface City {
-  city: string;
+  name: string;
   admin: string;
   country: string;
   population_proper: string;
@@ -7,6 +7,7 @@ export interface City {
   capital: string;
   lat: string;
   lng: string;
+  temperature: number;
   population: string;
 }
 
@@ -28,4 +29,10 @@ export interface CityListState extends CitiesStoreState, CounterStoreState {
 export interface CityWeather {
   temperature: number;
   isFetching: boolean;
+}
+
+export interface SelectedCities {
+  city: string;
+  minTemperature: number;
+  maxTemperature: number;
 }

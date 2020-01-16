@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Moscow",
+    "temperature": 2,
+    "lat": "55.752222",
+    "lng": "37.615556"
+  },
+  {
+    "name": "Saint Petersburg",
+    "temperature": 4,
+    "lat": "59.894444",
+    "lng": "30.264167"
+  },
+  {
+    "name": "Novosibirsk",
+    "temperature": 5,
+    "lat": "55.0415",
+    "lng": "82.9346"
+  },
+  {
+    "name": "Yekaterinburg",
+    "temperature": 9,
+    "lat": "56.8519",
+    "lng": "60.6122"
+  },
+  {
+    "name": "Nizhniy Novgorod",
+    "temperature": 9,
+    "lat": "56.326944",
+    "lng": "44.0075"
+  },
+  {
+    "name": "Samara",
+    "temperature": 0,
+    "lat": "53.200065",
+    "lng": "50.150002"
+  },
+  {
+    "name": "Omsk",
+    "temperature": 0,
+    "lat": "55.0",
+    "lng": "73.4"
+  },
+  {
+    "name": "Kazan\u2019",
+    "temperature": 7,
+    "lat": "55.78874",
+    "lng": "49.122144"
+  },
+  {
+    "name": "Chelyabinsk",
+    "temperature": 0,
+    "lat": "55.154015",
+    "lng": "61.42915"
+  },
+  {
+    "name": "Rostov-na-Donu",
+    "temperature": 3,
+    "lat": "47.23135",
+    "lng": "39.723284"
+  },
+  {
+    "name": "Ufa",
+    "temperature": 1,
+    "lat": "54.785167",
+    "lng": "56.045621"
+  },
+  {
+    "name": "Perm\u2019",
+    "temperature": 2,
+    "lat": "58.009282",
+    "lng": "56.284063"
+  },
+  {
+    "name": "Volgograd",
+    "temperature": 3,
+    "lat": "48.71939",
+    "lng": "44.501835"
+  },
+  {
+    "name": "Krasnoyarsk",
+    "temperature": 3,
+    "lat": "56.018393",
+    "lng": "92.867174"
+  },
+  {
+    "name": "Voronezh",
+    "temperature": 0,
+    "lat": "51.672035",
+    "lng": "39.184301"
+  },
+  {
+    "name": "Saratov",
+    "temperature": 5,
+    "lat": "51.540556",
+    "lng": "46.008611"
+  },
+  {
+    "name": "Krasnodar",
+    "temperature": 8,
+    "lat": "45.044843",
+    "lng": "38.976029"
+  },
+  {
+    "name": "Ul\u2019yanovsk",
+    "temperature": 2,
+    "lat": "54.328241",
+    "lng": "48.38657"
+  },
+  {
+    "name": "Izhevsk",
+    "temperature": 7,
+    "lat": "56.849756",
+    "lng": "53.204479"
+  },
+  {
+    "name": "Yaroslavl\u2019",
+    "temperature": 7,
+    "lat": "57.61977",
+    "lng": "39.85536"
+  },
+  {
+    "name": "Barnaul",
+    "temperature": 5,
+    "lat": "53.360556",
+    "lng": "83.763611"
+  },
+  {
+    "name": "Novokuznetsk",
+    "temperature": 7,
+    "lat": "53.7557",
+    "lng": "87.1099"
+  }
+]

@@ -5,12 +5,12 @@ import { CityListContainer } from "./index";
 import Spinner from "../../components/Spinner";
 
 import cities from "../../mocks/cityList.json";
-import citiesSelector from "../../selectors/cityCelector";
+import { biggestCitiesSelector } from "../../selectors/citySelector";
 
 describe("CityList container", () => {
   const props = {
     cities,
-    biggestCities: citiesSelector(cities),
+    biggestCities: biggestCitiesSelector(cities),
     isFetching: false,
     counter: 0,
     increment: jest.fn(),

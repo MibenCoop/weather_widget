@@ -8,7 +8,11 @@ export interface CityProps {
 
 const CityItem: any = ({ city }: CityProps) => {
   // console.log("city", city);
-  return <li style={{ textAlign: "left" }}>{city.city}</li>;
+  return (
+    <li style={{ textAlign: "left" }}>
+      {city.name}, temperature: {city.temperature}
+    </li>
+  );
 };
 
 export default CityItem;

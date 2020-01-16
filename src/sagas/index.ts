@@ -3,7 +3,8 @@ import { call, delay, put, takeEvery, fork } from "redux-saga/effects";
 import * as citiesAction from "../actions/cities";
 import * as cityWeather from "../actions/cityWeather";
 import { api } from "../services";
-import cityList from "../mocks/cityList.json";
+// import cityList from "../mocks/cityList.json";
+import cityList from "../mocks/cityWeather.json";
 
 export function mockFetchWeatherApi(city: string) {
   let weather = {
