@@ -40,23 +40,22 @@ export class CityListContainer extends Component<IProps, IState> {
     maxTemperature: any
   ) => {
     const { cities }: any = this.props;
-    console.log(minTemperature);
+    console.log("bla", minTemperature, maxTemperature);
     if (name.length > 0) {
       return cities.filter((city: any) => city.name === name);
-    } else if (minTemperature > 0) {
-      return cities.filter((city: any) => city.temperature >= minTemperature);
-    } else if (maxTemperature > 0) {
-      return cities.filter((city: any) => city.temperature <= maxTemperature);
-    } else {
+    } else if (minTemperature && maxTemperature) {
       return cities.filter(
         (city: any) =>
           city.temperature <= maxTemperature &&
           city.temperature >= minTemperature
       );
+    } else if (minTemperature) {
+      return cities.filter((city: any) => city.temperature >= minTemperature);
+    } else if (maxTemperature) {
+      return cities.filter((city: any) => city.temperature <= maxTemperature);
     }
   };
   selectCities({ city, minTemperature, maxTemperature }: SelectedCities) {
-    // console.log("selectCities", city, minTemperature, maxTemperature);
     const selectedCities = this.getCitiesByCelector(
       city,
       minTemperature,
