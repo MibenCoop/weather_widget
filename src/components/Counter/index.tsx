@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 export interface Props {
-  counter: number;
+    counter: number;
 }
 const Counter = ({ counter }: Props) => <p>{counter}</p>;
 export default Counter;

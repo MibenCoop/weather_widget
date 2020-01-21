@@ -1,7 +1,7 @@
-import { INCREMENT } from "./types";
+import { INCREMENT } from './types';
 
 export function increment() {
-  return {
-    type: INCREMENT
-  };
+    return {
+        type: INCREMENT,
+    };
 }
