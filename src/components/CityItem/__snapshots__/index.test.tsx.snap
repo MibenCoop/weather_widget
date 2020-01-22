@@ -9,5 +9,7 @@ exports[`City item component Renders a City Item  1`] = `
   }
 >
   Moscow
+  , temperature: 
+  2
 </li>
 `;

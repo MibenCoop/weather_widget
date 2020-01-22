@@ -5,7 +5,7 @@ import { CityListContainer } from './index';
 import Spinner from '../../components/Spinner';
 
 import cities from '../../mocks/cityList.json';
-import { biggestCitiesSelector } from '../../selectors/citySelector';
+import biggestCitiesSelector from '../../selectors/citySelector';
 
 describe('CityList container', () => {
     const props = {
@@ -19,9 +19,6 @@ describe('CityList container', () => {
     const cityList = shallow(<CityListContainer {...props} />);
     it('should match snapshot', () => {
         expect(cityList).toMatchSnapshot();
-    });
-    it('should cities be fetched', () => {
-        expect(props.fetchCities).toBeCalledTimes(1);
     });
     it("should not render spinner if doesn't fetching", () => {
         cityList.setProps({ isFetching: false });

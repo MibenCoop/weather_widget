@@ -2,14 +2,8 @@
 
 exports[`CityList container should match snapshot 1`] = `
 <Fragment>
-  <button
-    className="counter-button"
-    onClick={[Function]}
-  >
-    Increment
-  </button>
-  <Counter
-    counter={0}
+  <Component
+    selectCities={[Function]}
   />
   <p>
     Top ten biggest City in Russia

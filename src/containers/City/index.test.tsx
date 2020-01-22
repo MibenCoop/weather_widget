@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 
 const props = {
     name: 'Moscow',
-    temparature: 10,
+    temperature: 10,
     isFetching: false,
     fetchWeather: jest.fn(),
 };
@@ -29,15 +29,15 @@ describe('City Weather List container', () => {
     it('should render prop name correctly', () => {
         expect(cityList.prop('name')).toEqual(props.name);
     });
-    it('should fetch weather on page loading', () => {
-        expect(props.fetchWeather).toBeCalledTimes(1);
-    });
-    it('should be called data fetching if component will be updated', () => {
-        //force a rerender
-        cityList.setProps({ name: 'Rostov' });
-        expect(cityList.prop('name')).toEqual('Rostov');
-        expect(props.fetchWeather).toBeCalledTimes(2);
-    });
+    // it('should fetch weather on page loading', () => {
+    //     expect(props.fetchWeather).toBeCalledTimes(1);
+    // });
+    // it('should be called data fetching if component will be updated', () => {
+    //     //force a rerender
+    //     cityList.setProps({ name: 'Rostov' });
+    //     expect(cityList.prop('name')).toEqual('Rostov');
+    //     expect(props.fetchWeather).toBeCalledTimes(2);
+    // });
     it("should not render spinner if doesn't fetching", () => {
         cityList.setProps({ isFetching: false });
         expect(cityList.find(Spinner).length).toEqual(0);

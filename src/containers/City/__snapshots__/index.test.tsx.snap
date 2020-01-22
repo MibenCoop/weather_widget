@@ -3,5 +3,6 @@
 exports[`City Weather List container should match snapshot 1`] = `
 <City
   name="Moscow"
+  temperature={10}
 />
 `;

@@ -7,4 +7,7 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     snapshotSerializers: ['enzyme-to-json/serializer'],
     setupFilesAfterEnv: ['./src/setupEnzyme.ts', './src/setupTests.ts'],
+    moduleNameMapper: {
+        '\\.(css|less)$': 'identity-obj-proxy',
+    },
 };

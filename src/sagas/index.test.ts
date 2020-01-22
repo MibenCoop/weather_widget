@@ -1,7 +1,7 @@
 import { call, delay, put, takeEvery, fork } from 'redux-saga/effects';
 
 import { fetchWeather, fetchCities } from './index';
-import cityList from '../mocks/cityList.json';
+import cityList from '../mocks/cityWeather.json';
 import { requestCityList, receiveCityList } from '../actions/cities';
 import { requestWeather, receiveWeather } from '../actions/cityWeather';
 import { api } from './../services/index';

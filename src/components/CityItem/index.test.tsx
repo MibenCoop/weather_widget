@@ -5,15 +5,10 @@ import CityItem from './index';
 
 describe('City item component', () => {
     const cityMock = {
-        city: 'Moscow',
-        admin: 'Moskva',
-        country: 'Russia',
-        population_proper: '10452000',
-        iso2: 'RU',
-        capital: 'primary',
+        name: 'Moscow',
+        temperature: '2',
         lat: '55.752222',
         lng: '37.615556',
-        population: '10452000',
     };
     it('Renders a City Item ', () => {
         const city = shallow(<CityItem city={cityMock} />);
@@ -21,6 +16,6 @@ describe('City item component', () => {
     });
     it('Renders a correct city name ', () => {
         const city = shallow(<CityItem city={cityMock} />);
-        expect(city.find('li').text()).toEqual('Moscow');
+        expect(city.find('li').text()).toEqual(`${cityMock.name}, temperature: ${cityMock.temperature}`);
     });
 });

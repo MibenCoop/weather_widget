@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchCities } from '../../actions/cities';
@@ -7,16 +7,17 @@ import CitiesSelector from '../../selectors/citySelector';
 
 import Spinner from '../../components/Spinner';
 import CityList from '../../components/CityList';
-import { SignupForm } from '../SignupForm';
+import { SignupForm } from '../../components/SignupForm';
 import Counter from '../../components/Counter';
 
 import { City, CityListState, SelectedCities } from '../../interfaces';
-import cities from '../../reducers/cities';
 
 interface Props {
     cities: Array<object>;
     biggestCities: Array<object>;
     counter: number;
+    isFetching: boolean;
+    fetchCities: Function;
 }
 
 interface State {
@@ -24,19 +25,26 @@ interface State {
     selectedCities?: SelectedCities;
     hasSelectedCities: boolean;
 }
-export class CityListContainer extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = { hasSelectedCities: false };
-    }
-    componentDidMount() {
-        const { fetchCities }: any = this.props;
-        fetchCities();
-    }
 
-    getCitiesByCelector = (name: any, minTemperature: any, maxTemperature: any) => {
-        const { cities }: any = this.props;
-        console.log('bla', minTemperature, maxTemperature);
+export function CityListContainer(props: Props) {
+    const { fetchCities, biggestCities, cities, isFetching } = props;
+    const [hasSelectedCities, setHasSelectedCities] = useState(false);
+    const [selectedCities, setSelectedCities] = useState([]);
+    useEffect(() => {
+        const fetchCityList = () => {
+            fetchCities();
+        };
+        return fetchCityList();
+    }, []);
+
+    const selectCities = ({ city, minTemperature, maxTemperature }: SelectedCities) => {
+        const selectedCitiesBySelector = getCitiesByCelector(city, minTemperature, maxTemperature);
+        setHasSelectedCities(true);
+        setSelectedCities(selectedCitiesBySelector);
+    };
+
+    const getCitiesByCelector = (name: any, minTemperature: any, maxTemperature: any) => {
+        const { cities }: any = props;
         if (name.length > 0) {
             return cities.filter((city: any) => city.name === name);
         } else if (minTemperature && maxTemperature) {
@@ -49,32 +57,23 @@ export class CityListContainer extends Component<Props, State> {
             return cities.filter((city: any) => city.temperature <= maxTemperature);
         }
     };
-    selectCities({ city, minTemperature, maxTemperature }: SelectedCities) {
-        const selectedCities = this.getCitiesByCelector(city, minTemperature, maxTemperature);
-        this.setState({ selectedCities, hasSelectedCities: true });
-    }
-    render() {
-        const { cities, isFetching, increment, biggestCities, counter }: any = this.props;
-        if (isFetching || !cities) return <Spinner />;
-        return (
-            <>
-                {/* <button className="counter-button" onClick={() => increment()}>
-          Increment
-        </button> */}
-                <SignupForm selectCities={(values: SelectedCities) => this.selectCities(values)} />
-                {this.state.hasSelectedCities ? (
-                    <>
-                        <p>Selected cities2</p>
-                        <CityList cities={this.state.selectedCities} />
-                    </>
-                ) : null}
-                <p>Top ten biggest City in Russia</p>
-                <CityList cities={biggestCities} />
-                <p>All</p>
-                <CityList cities={cities} />
-            </>
-        );
-    }
+
+    if (isFetching || !cities) return <Spinner />;
+    return (
+        <>
+            <SignupForm selectCities={(values: SelectedCities) => selectCities(values)} />
+            {hasSelectedCities ? (
+                <>
+                    <p>Selected cities</p>
+                    <CityList cities={selectedCities} />
+                </>
+            ) : null}
+            <p>Top ten biggest City in Russia</p>
+            <CityList cities={biggestCities} />
+            <p>All</p>
+            <CityList cities={cities} />
+        </>
+    );
 }
 
 const mapStateToProps = ({ cities, counter }: CityListState) => {
