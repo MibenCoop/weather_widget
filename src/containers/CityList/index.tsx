@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchCities } from '../../actions/cities';
@@ -11,6 +11,7 @@ import { SignupForm } from '../../components/SignupForm';
 import Counter from '../../components/Counter';
 
 import { City, CityListState, SelectedCities } from '../../interfaces';
+import { ThemeContext, themes } from '../ThemedContext/ThemeContext';
 
 interface Props {
     cities: Array<object>;
@@ -28,6 +29,9 @@ interface State {
 
 export function CityListContainer(props: Props) {
     const { fetchCities, biggestCities, cities, isFetching } = props;
+    const theme = useContext(ThemeContext);
+    console.log('CityListContainer theme', theme);
+    const themeStyle = theme === 'light' ? themes.light : themes.dark;
     const [hasSelectedCities, setHasSelectedCities] = useState(false);
     const [selectedCities, setSelectedCities] = useState([]);
     useEffect(() => {
@@ -35,13 +39,7 @@ export function CityListContainer(props: Props) {
             fetchCities();
         };
         return fetchCityList();
-    }, []);
-
-    const selectCities = ({ city, minTemperature, maxTemperature }: SelectedCities) => {
-        const selectedCitiesBySelector = getCitiesByCelector(city, minTemperature, maxTemperature);
-        setHasSelectedCities(true);
-        setSelectedCities(selectedCitiesBySelector);
-    };
+    }, [fetchCities]);
 
     const getCitiesByCelector = (name: any, minTemperature: any, maxTemperature: any) => {
         const { cities }: any = props;
@@ -58,9 +56,15 @@ export function CityListContainer(props: Props) {
         }
     };
 
+    const selectCities = ({ city, minTemperature, maxTemperature }: SelectedCities) => {
+        const selectedCitiesBySelector = getCitiesByCelector(city, minTemperature, maxTemperature);
+        setHasSelectedCities(true);
+        setSelectedCities(selectedCitiesBySelector);
+    };
+
     if (isFetching || !cities) return <Spinner />;
     return (
-        <>
+        <div style={{ backgroundColor: themeStyle.background, color: themeStyle.foreground }}>
             <SignupForm selectCities={(values: SelectedCities) => selectCities(values)} />
             {hasSelectedCities ? (
                 <>
@@ -72,7 +76,7 @@ export function CityListContainer(props: Props) {
             <CityList cities={biggestCities} />
             <p>All</p>
             <CityList cities={cities} />
-        </>
+        </div>
     );
 }
 
