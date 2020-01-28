@@ -64,7 +64,7 @@ export function CityListContainer(props: Props) {
 
     if (isFetching || !cities) return <Spinner />;
     return (
-        <div style={{ backgroundColor: themeStyle.background, color: themeStyle.foreground }}>
+        <div>
             <SignupForm selectCities={(values: SelectedCities) => selectCities(values)} />
             {hasSelectedCities ? (
                 <>
